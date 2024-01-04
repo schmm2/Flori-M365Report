@@ -24,3 +24,12 @@ Creating a PowerShell module of this complexity was a new to me, and the existin
 |   |   |   |
 
 List not completed yet... 
+
+# Issues / Feedback
+For any issues or feedback related to this project, please sign up for GitHub, and create an issue.
+
+# Thanks
+
+@ThomasKur for open sourcing the M365 Documentation project.
+
+@guidooliveira / @PrzemyslawKlys for the PSWriteWord Module, which enables the creation of the Word file. https://github.com/EvotecIT/PSWriteWord
