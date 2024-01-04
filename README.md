@@ -17,5 +17,10 @@ Creating a PowerShell module of this complexity was a new to me, and the existin
 
 ### Copied Files
 
+| Original Filename  | New Name  | Source |
+|---|---|---|
+| M365Documentation.psd1   | M365Report.psd1   | https://github.com/ThomasKur/M365Documentation/blob/main/PSModule/M365Documentation/M365Documentation.psd1  |
+|   |   |   |
+|   |   |   |
 
-
+List not completed yet... 
