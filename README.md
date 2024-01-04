@@ -1,6 +1,8 @@
 # Flori M365Report
 Welcome to Flori M365Report
 
+![Icon](./Branding/icon-small.png)
+
 # Purpose
 
 # Usage
