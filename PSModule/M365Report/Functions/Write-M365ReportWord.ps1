@@ -61,7 +61,7 @@ Function Write-M365ReportWord() {
         Write-Progress -Id 10 -Activity "Create Word File" -Status "Prepared File template" -PercentComplete 10
         #endregion
     
-        
+        $Level = 0    
         $progress = 0
         foreach ($Section in $Data.SubSections) {
             $progress++
