@@ -5,21 +5,33 @@ Welcome to Flori M365Report
 
 The main idea behind Flori is to create a nice looking report about your Microsoft 365 Tenant. 
 
-The idea is not to collect al different policies, users, devices and list them, thats what the [M365Documentation Project](https://github.com/ThomasKur/M365Documentation.) is doing. We want to ask specific questions about the environment like 
+The idea is not to collect all different policies, users, devices and list them, thats what the [M365Documentation Project](https://github.com/ThomasKur/M365Documentation.) is doing. We want to ask specific questions about the environment like 
 
 - "Which users are inactive" and could be deleted and even save me some money on licensing. 
 - How many priviliged Admins are there and do they have a Phishing resistant Authentication Method added?
 - And so on...
 
-With the help of Collector Scripts (Idea copied from the M365Documentation Project), many types of information can be collected and be written the wished output format (Word, CSV, HTML).
+With the help of Collector Scripts (Idea copied from the M365Documentation Project), many types of information can be collected and be written to the prefered output format (Word, CSV, HTML).
 
 The project will be setup so everybody can use the module in their specific environment. It will be adaptable with templates and parameters so you can get the exact report you as an indiviual or MSP are needing.
 
 The project will hopefully be community centric. The main idea is that everybody can create a "Collector" script to query different types of data to complete their vision of a perfect report. These Collectors will be stored inside the project so everbody else can profit from them.
 
+
+# Functions
+
+## Done
+
+- Multilanguage configuration
+
+## TODO's
+
+- Customize Collector scripts thresholds => User inactivity equls 2 months, 3months...
+- Custom Template path
+
 # Usage
 
-TODO
+Coming...
 
 # License
 The license of the project is GPL v3.

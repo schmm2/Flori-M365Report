@@ -16,22 +16,14 @@
         "EN": "Inactive Accounts"
     },
     "INACTIVEACCOUNTS-TEXT": {
-        "DE": "Das ist ein Beispiel",
+        "DE": "Es folgt eine Auflistung aller inaktiver Accounts",
         "EN": "This is an example"
     },
     "INACTIVEUSERS": {
         "DE": "Inaktive Benutzer",
         "EN": "Inactive Users"
     },
-    "INACTIVEUSERS-TEXT": {
-        "DE": "Inaktive Benutzer",
-        "EN": "Inactive Users"
-    },
     "INACTIVEGUESTS": {
-        "DE": "Inaktive Gäste",
-        "EN": "Inactive Guests"
-    },
-    "INACTIVEGUESTS-TEXT": {
         "DE": "Inaktive Gäste",
         "EN": "Inactive Guests"
     }

@@ -20,8 +20,7 @@ Function Write-DocumentationWordSection() {
         [int]$Level = 1
     )
     
-    if ($Data.Objects -or $Data.SubSections) {
-        Write-Host $Data.Title 
+    if ($Data.Objects -or $Data.SubSections) { 
         Add-WordText -WordDocument $WordDocument -HeadingType "Heading$Level" -Text $Data.Title -Supress $True
         
         if ($Data.Text) {
