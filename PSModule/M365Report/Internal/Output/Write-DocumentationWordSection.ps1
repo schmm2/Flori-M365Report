@@ -21,7 +21,7 @@ Function Write-DocumentationWordSection(){
     )
     
     if($Data.Objects -or $Data.SubSections){
-        Add-WordText -WordDocument $WordDocument -HeadingType "Heading$Level" -Text $Data.Title -Supress $False
+        Add-WordText -WordDocument $WordDocument -HeadingType "Heading$Level" -Text $Data.Title -Supress $True
         if($Data.Text){
             Add-WordText -WordDocument $WordDocument -Text $Data.Text -Supress $True
         }
