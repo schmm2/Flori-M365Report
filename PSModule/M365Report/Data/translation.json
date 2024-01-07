@@ -1,0 +1,38 @@
+{
+    "DISPLAYNAME": {
+        "DE": "Anzeigename",
+        "EN": "Displayname"
+    },
+    "LASTSIGNIN": {
+        "DE": "Lezte Anmeldung",
+        "EN": "Last Sign in"
+    },
+    "DAYSSINCELASTSIGNIN": {
+        "DE": "Lezte Anmeldung in Tagen",
+        "EN": "Last sign in in days"
+    },
+    "INACTIVEACCOUNTS": {
+        "DE": "Inaktive Accounts",
+        "EN": "Inactive Accounts"
+    },
+    "INACTIVEACCOUNTS-TEXT": {
+        "DE": "Das ist ein Beispiel",
+        "EN": "This is an example"
+    },
+    "INACTIVEUSERS": {
+        "DE": "Inaktive Benutzer",
+        "EN": "Inactive Users"
+    },
+    "INACTIVEUSERS-TEXT": {
+        "DE": "Inaktive Benutzer",
+        "EN": "Inactive Users"
+    },
+    "INACTIVEGUESTS": {
+        "DE": "Inaktive Gäste",
+        "EN": "Inactive Guests"
+    },
+    "INACTIVEGUESTS-TEXT": {
+        "DE": "Inaktive Gäste",
+        "EN": "Inactive Guests"
+    }
+}

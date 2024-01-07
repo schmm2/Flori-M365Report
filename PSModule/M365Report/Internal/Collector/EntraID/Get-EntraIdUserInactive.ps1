@@ -31,25 +31,26 @@ Function Get-EntraIdUserInactive() {
         }
 
         $userObject = New-Object -Type PSObject
-        $userObject | Add-Member Noteproperty "Name" $inactiveUser.displayName
-        $userObject | Add-Member Noteproperty "LastSignIn" $inactiveUser.signInActivity.lastSignInDateTime
-        $userObject | Add-Member Noteproperty "DaysSinceLastSignIn" $timeSinceLastSignIn.Days
+        $userObject | Add-Member Noteproperty "TRANSLATE-DISPLAYNAME" $inactiveUser.displayName
+        $userObject | Add-Member Noteproperty "TRANSLATE-LASTSIGNIN" (Get-Date -Date $inactiveUser.signInActivity.lastSignInDateTime -Format "dd.MM.yyyy hh:mm:ss")
+        $userObject | Add-Member Noteproperty "TRANSLATE-DAYSSINCELASTSIGNIN" $timeSinceLastSignIn.Days
 
         $newUserObjects += $userObject
     }
 
     $ReportSectionMember = New-Object ReportSection
-    $ReportSectionMember.Title = "Inactive Users"
+    $ReportSectionMember.Title = "TRANSLATE-INACTIVEUSERS"
     $ReportSectionMember.Objects = $newUserObjects
     $ReportSectionMember.Transpose = $false
 
     $ReportSectionGuest = New-Object ReportSection
-    $ReportSectionGuest.Title = "Inactive Guests"
+    $ReportSectionGuest.Title = "TRANSLATE-INACTIVEGUESTS"
     $ReportSectionGuest.Objects = $newUserObjects
     $ReportSectionGuest.Transpose = $false
 
     $ReportSection = New-Object ReportSection
-    $ReportSection.Title = "Inactive Accounts"
+    $ReportSection.Title = "TRANSLATE-INACTIVEACCOUNTS"
+    $ReportSection.Text = "TRANSLATE-INACTIVEACCOUNTS-TEXT"
     $ReportSection.SubSections = @($ReportSectionMember,$ReportSectionGuest)
     $ReportSection.Transpose = $false
 

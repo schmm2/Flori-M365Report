@@ -55,7 +55,6 @@ Function Write-M365ReportWord() {
             $WordDocument = Get-WordDocument $FullReportPath.FullName
             foreach ($Paragraph in $WordDocument.Paragraphs) {
                 $Paragraph.ReplaceText('DATE', (Get-Date -Format "HH:mm dd.MM.yyyy"))
-                $Paragraph.ReplaceText('SYSTEM', ($Data.Components -join ", "))
                 $Paragraph.ReplaceText('TENANT', $Data.Organization)
             }
         }

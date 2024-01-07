@@ -20,48 +20,59 @@ function Write-Log {
 
     .NOTES
     This function should be used to log information to console or log file.
+
+    .CHANGELOG
+    M.Schmidli / 5.1.2024 Adapted to M365Report, change Log File and EventSource Name
+
     #>
     param(
-        [Parameter(Mandatory=$true,Position=1)]
+        [Parameter(Mandatory = $true, Position = 1)]
         [String]
         $Message
-    ,
-        [Parameter(Mandatory=$false)]
-        [ValidateSet("Info","Debug","Warn","Error")]
+        ,
+        [Parameter(Mandatory = $false)]
+        [ValidateSet("Info", "Debug", "Warn", "Error")]
         [String]
         $Type = "Debug"
 
-    ,
-        [Parameter(Mandatory=$false)]
+        ,
+        [Parameter(Mandatory = $false)]
         [Exception]
         $Exception
     )
-    $LogFilePathFolder     = Join-Path -Path $Env:TEMP -ChildPath $ScriptName
-    $OutputMode  = "Console" # "Console-LogFile","Console-WindowsEvent","LogFile-WindowsEvent","Console","LogFile","WindowsEvent","All"
-    $DefaultLogWindowsEventSource = "IntuneDocumentation"
+   
+    $LogFilePathFolder = $Env:TEMP
+    $OutputMode = "Console" # "Console-LogFile","Console-WindowsEvent","LogFile-WindowsEvent","Console","LogFile","WindowsEvent","All"
+    $DefaultLogWindowsEventSource = "FloriM365Report"
     $DefaultLogWindowsEventLog = "CustomPS"
-    $LogFilePath = "$LogFilePathFolder\IntuneDocumentation_$(Get-Date -uformat %Y%m%d%H%M).log"
+    
+    $LogFilePath = "$LogFilePathFolder\FloriM365Report_$(Get-Date -uformat %Y%m%d%H%M).log"
     $DateTimeString = Get-Date -Format "yyyy-MM-dd HH:mm:sszz"
     $Output = ($DateTimeString + "`t" + $Type.ToUpper() + "`t" + $Message)
-    if($Exception){
-        $ExceptionString =  ("[" + $Exception.GetType().FullName + "] " + $Exception.Message)
+
+    if ($Exception) {
+        $ExceptionString = ("[" + $Exception.GetType().FullName + "] " + $Exception.Message)
         $Output = "$Output - $ExceptionString"
     }
     if ($OutputMode -eq "Console" -OR $OutputMode -eq "Console-LogFile" -OR $OutputMode -eq "Console-WindowsEvent" -OR $OutputMode -eq "All") {
-        if($Type -eq "Error"){
+        if ($Type -eq "Error") {
             Write-Error $output
-        } elseif($Type -eq "Warn"){
+        }
+        elseif ($Type -eq "Warn") {
             Write-Warning $output
-        } elseif($Type -eq "Debug"){
+        }
+        elseif ($Type -eq "Debug") {
             Write-Debug $output
-        } else{
+        }
+        else {
             Write-Verbose $output -Verbose
         }
     }
     if ($OutputMode -eq "LogFile" -OR $OutputMode -eq "Console-LogFile" -OR $OutputMode -eq "LogFile-WindowsEvent" -OR $OutputMode -eq "All") {
         try {
             Add-Content $LogFilePath -Value $Output -ErrorAction Stop
-        } catch {
+        }
+        catch {
             exit 99001
         }
     }
@@ -82,7 +93,8 @@ function Write-Log {
                 }
             }
             Write-EventLog -LogName $DefaultLogWindowsEventLog -Source $DefaultLogWindowsEventSource -EntryType $EventType -EventId 1 -Message $Output -ErrorAction Stop
-        } catch {
+        }
+        catch {
             exit 99002
         }
     }

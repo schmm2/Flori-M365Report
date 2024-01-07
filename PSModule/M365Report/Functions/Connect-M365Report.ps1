@@ -14,6 +14,7 @@ Function Connect-M365Report() {
     switch -Wildcard ($PSCmdlet.ParameterSetName) {
         "Interactive" {
             Connect-MgGraph -Scopes "User.Read.All", "Group.Read.All", "AuditLog.Read.All" -NoWelcome
+            Write-Log -Message "Connected to Tenant" -Type Info
         }
     }
 }
