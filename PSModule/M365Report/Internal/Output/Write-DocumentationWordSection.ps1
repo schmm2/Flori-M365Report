@@ -1,4 +1,4 @@
-Function Write-DocumentationWordSection(){
+Function Write-DocumentationWordSection() {
     <#
     .SYNOPSIS
     Outputs a section of the documentation to Word
@@ -20,27 +20,30 @@ Function Write-DocumentationWordSection(){
         [int]$Level = 1
     )
     
-    if($Data.Objects -or $Data.SubSections){
+    if ($Data.Objects -or $Data.SubSections) {
+        Write-Host $Data.Title 
         Add-WordText -WordDocument $WordDocument -HeadingType "Heading$Level" -Text $Data.Title -Supress $True
-        if($Data.Text){
+        
+        if ($Data.Text) {
             Add-WordText -WordDocument $WordDocument -Text $Data.Text -Supress $True
         }
-        if($Data.Objects){
-            
-            if($Data.Transpose){
-                foreach($singleObj in $Data.Objects){
-                    if($singleObj.displayName -ne $Data.Title -and $Data.Title -ne $singleObj.'Display Name'){
+        
+        if ($Data.Objects) {   
+            if ($Data.Transpose) {
+                foreach ($singleObj in $Data.Objects) {
+                    if ($singleObj.displayName -ne $Data.Title -and $Data.Title -ne $singleObj.'Display Name') {
                         Add-WordText -WordDocument $WordDocument -HeadingType "Heading$($Level + 1)" -Text $singleObj.displayName -Supress $True
                     }
                     Add-WordTable -WordDocument $WordDocument -DataTable $singleObj -Design LightListAccent2 -Supress $True -Transpose -AutoFit Window
                 }
                 
-            } else {
+            }
+            else {
                 Add-WordTable -WordDocument $WordDocument -DataTable $Data.Objects -Design LightListAccent2 -Supress $True -AutoFit Window
             }
             
         }
-        foreach($Section in $Data.SubSections){
+        foreach ($Section in $Data.SubSections) {
             Write-DocumentationWordSection -WordDocument $WordDocument -Data $Section -Level ($Level + 1)
         }
     }

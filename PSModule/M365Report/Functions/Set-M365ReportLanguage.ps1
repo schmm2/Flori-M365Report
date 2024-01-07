@@ -58,7 +58,7 @@ Function Set-M365ReportLanguage() {
             return
         }
 
-        $translations = Get-Content -Raw -Path $translationJSONPath | ConvertFrom-Json
+        $translations = Get-Content -Raw -Path $translationJSONPath -Encoding UTF8 | ConvertFrom-Json
 
         Write-Progress -Id 10 -Activity "Translate Report" -Status "Translation File loaded" -PercentComplete 10
         #endregion
