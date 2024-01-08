@@ -41,8 +41,13 @@ import-module "$scriptPath\M365Report\M365Report.psm1" -force
 Connect-M365Report -Interactive
 $report = Get-M365Report -Components EntraID
 
+# Set all labels to German
 $reportDE = $report | Set-M365ReportLanguage -Language DE
 $reportDE | Write-M365ReportWord -FullReportPath "c:\temp\$($reportDE.CreationDate.ToString("yyyyMMddHHmm"))-Report-DE.docx"
+
+# Set all labels to English
+$reportEN = $report | Set-M365ReportLanguage -Language EN
+$reportEN | Write-M365ReportWord -FullReportPath "c:\temp\$($reportEN.CreationDate.ToString("yyyyMMddHHmm"))-Report-DE.docx"
 ```
 
 ## License
