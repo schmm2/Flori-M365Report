@@ -35,6 +35,13 @@ Function Write-M365ReportWord() {
                 return $true 
             })]
         [System.IO.FileInfo]$FullReportPath = ".\$($Data.CreationDate.ToString("yyyyMMddHHmm"))-Report.docx",
+        [ValidateScript({
+                if ($_ -notmatch "(\.docx)") {
+                    throw "The file specified in the path argument must be of type docx."
+                }
+                return $true 
+            })]
+        [System.IO.FileInfo]$FullTemplatePath = "$PSScriptRoot\..\Data\Template.docx",
         [Parameter(ValueFromPipeline, Mandatory)]
         [Report]$Data
     )
@@ -51,7 +58,7 @@ Function Write-M365ReportWord() {
             $WordDocument = New-WordDocument $FullReportPath
         }
         else {
-            Copy-Item "$PSScriptRoot\..\Data\Template.docx" -Destination $FullReportPath
+            Copy-Item $FullTemplatePath -Destination $FullReportPath
             $WordDocument = Get-WordDocument $FullReportPath.FullName
             foreach ($Paragraph in $WordDocument.Paragraphs) {
                 $Paragraph.ReplaceText('DATE', (Get-Date -Format "HH:mm dd.MM.yyyy"))

@@ -23,11 +23,14 @@ The project will hopefully be community centric. The main idea is that everybody
 ## Done
 
 - Multilanguage configuration
+- Custom Template path
 
 ## TODO's
 
 - Customize Collector scripts thresholds => User inactivity equls 2 months, 3months...
-- Custom Template path
+
+- Add Secure Scores per Collector (not MS Secure Score)
+- Add Secure Score Table at the Beginning (like PingCastle)
 
 # Usage
 
