@@ -17,8 +17,16 @@ The project will be setup so everybody can use the module in their specific envi
 
 The project will hopefully be community centric. The main idea is that everybody can create a "Collector" script to query different types of data to complete their vision of a perfect report. These Collectors will be stored inside the project so everbody else can profit from them.
 
+## Collectors
 
-## Functions
+A list of all collectors which have been implemented yet
+
+| Name              | Functionality                   |
+| ----------------- | ------------------------------- |
+| EntraUserInactive | Inactive member and guest users |
+
+
+## Development v1.0
 
 ### Done
 
@@ -60,11 +68,11 @@ Creating a PowerShell module of this complexity was a new to me, and the existin
 
 #### Copied Files
 
-| Original Filename  | New Name  | Source |
-|---|---|---|
-| M365Documentation.psd1   | M365Report.psd1   | https://github.com/ThomasKur/M365Documentation/blob/main/PSModule/M365Documentation/M365Documentation.psd1  |
-|   |   |   |
-|   |   |   |
+| Original Filename      | New Name        | Source                                                                                                     |
+| ---------------------- | --------------- | ---------------------------------------------------------------------------------------------------------- |
+| M365Documentation.psd1 | M365Report.psd1 | https://github.com/ThomasKur/M365Documentation/blob/main/PSModule/M365Documentation/M365Documentation.psd1 |
+|                        |                 |                                                                                                            |
+|                        |                 |                                                                                                            |
 
 List not completed yet... 
 
