@@ -3,6 +3,10 @@
         "DE": "Anzeigename",
         "EN": "Displayname"
     },
+    "OWNER": {
+        "DE": "Besitzer",
+        "EN": "Owner"
+    },
     "LASTSIGNIN": {
         "DE": "Lezte Anmeldung",
         "EN": "Last Sign in"
@@ -26,5 +30,13 @@
     "INACTIVEGUESTS": {
         "DE": "Inaktive Gäste",
         "EN": "Inactive Guests"
+    },
+    "INACTIVEDEVICES": {
+        "DE": "Inaktive Geräte",
+        "EN": "Inactive Devices"
+    },
+    "INACTIVEDEVICES-TEXT": {
+        "DE": "Inaktive Geräte welche seit längerem nicht mehr mit EntraID kommuniziert haben.",
+        "EN": "Inactive Devices"
     }
 }

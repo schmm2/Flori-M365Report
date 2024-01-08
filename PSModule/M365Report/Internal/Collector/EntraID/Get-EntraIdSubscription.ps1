@@ -22,6 +22,8 @@ Function Get-EntraIdSubscription() {
     $ReportSection.Objects = (Invoke-ReportGraph -Path "/subscribedSkus").value
     $ReportSection.Transpose = $true
     
+    return $null 
+    
     if ($null -eq $ReportSection.Objects) {
         return $null
     }
