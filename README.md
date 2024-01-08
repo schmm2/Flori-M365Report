@@ -23,7 +23,7 @@ A list of all collectors which have been implemented yet
 
 | Name              | Functionality                   |
 | ----------------- | ------------------------------- |
-| EntraUserInactive | Inactive member and guest users |
+| EntraIUserInactive | Inactive member and guest users |
 
 
 ## Development v1.0
