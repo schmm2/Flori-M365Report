@@ -1,5 +1,5 @@
-# Flori M365Report
-Welcome to Flori M365Report
+# Flori Microsoft365 Report
+Welcome to Flori Microsoft365 Report
 
 <img align="right" src="https://github.com/schmm2/Flori-M365Report/raw/main/Branding/icon.png" width="200px" alt="Flori">
 
